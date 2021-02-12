@@ -11,6 +11,7 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-family: "Work sans", sans-serif;
+  color: #13293d;
 }
 
 header {
@@ -18,7 +19,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #13293d;
 }
 
 header h1 {
@@ -90,7 +90,7 @@ button {
   align-items: center;
 }
 
-.close {
-  color: white;
-  padding: 1rem;
+.noTask {
+  text-align: center;
+  padding-top: 4rem;
 }

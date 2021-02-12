@@ -25,11 +25,22 @@ function App() {
     },
   ]);
 
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+    console.log("delete", id);
+  };
+
   return (
     <div className="App">
       <Header />
       <From />
-      <Tasks tasks={tasks} />
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask} />
+      ) : (
+        <h3 style={{ textAlign: "center", paddingTop: "5rem" }}>
+          No tasks to show
+        </h3>
+      )}
     </div>
   );
 }
