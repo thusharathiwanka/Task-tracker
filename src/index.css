@@ -64,3 +64,33 @@ button {
   color: white;
   cursor: pointer;
 }
+
+.task-container {
+  padding-top: 5rem;
+}
+
+.task-container h3 {
+  font-weight: 600;
+}
+
+.task-container p {
+  color: #959595;
+  font-size: 1rem;
+}
+
+.task {
+  width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #e8f1f2;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close {
+  color: white;
+  padding: 1rem;
+}
