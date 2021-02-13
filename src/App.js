@@ -8,32 +8,37 @@ function App() {
     {
       id: 1,
       text: "Doctor's appointment",
-      time: "Feb 15 at 2:30 PM",
-      isRemindered: true,
     },
     {
       id: 2,
       text: "Basketball practice",
-      time: "Feb 16 at 3:30 PM",
-      isRemindered: false,
     },
     {
       id: 3,
       text: "Go to supermarket",
-      time: "Feb 14 at 2:30 PM",
-      isRemindered: true,
     },
   ]);
 
+  let taskInput = null;
+
+  const taskSubmit = (e) => {
+    e.preventDefault();
+    setTasks([...tasks, { id: tasks.length + 1, text: taskInput }]);
+    console.log(tasks);
+  };
+
+  const getInput = (e) => {
+    taskInput = e.target.value;
+  };
+
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
-    console.log("delete", id);
   };
 
   return (
     <div className="App">
       <Header />
-      <From />
+      <From getInput={getInput} taskSubmit={taskSubmit} />
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} />
       ) : (

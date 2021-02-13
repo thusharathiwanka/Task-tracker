@@ -5,7 +5,7 @@ const Button = ({ text, background, className, onClick }) => {
     <button
       type="submit"
       style={{ background: background }}
-      onClick={onClick}
+      onClick={(e) => onClick(e)}
       className={className}
     >
       {text}
@@ -15,7 +15,7 @@ const Button = ({ text, background, className, onClick }) => {
 
 Button.defaultProps = {
   text: "Button",
-  background: "#2eb3ff",
+  background: "#006494",
   className: "Button",
 };
 

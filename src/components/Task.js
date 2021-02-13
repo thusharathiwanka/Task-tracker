@@ -5,7 +5,6 @@ const Task = ({ task, onDelete }) => {
     <div className="task">
       <div className="task-text">
         <h3>{task.text}</h3>
-        <p>{task.time}</p>
       </div>
       <FaTimes
         style={{

@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-const Form = () => {
+const Form = ({ getInput, taskSubmit }) => {
   return (
     <form action="">
       <input
@@ -8,8 +8,9 @@ const Form = () => {
         name="task"
         id="task-input"
         placeholder="Enter your task here"
+        onChange={getInput}
       />
-      <Button text="Add" />
+      <Button text="Add" onClick={taskSubmit} />
     </form>
   );
 };
