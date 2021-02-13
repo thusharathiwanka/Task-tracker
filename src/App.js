@@ -19,16 +19,21 @@ function App() {
     },
   ]);
 
-  let taskInput = null;
+  const [task, setTask] = useState("");
+  let btnClicked = false;
 
   const taskSubmit = (e) => {
     e.preventDefault();
-    setTasks([...tasks, { id: tasks.length + 1, text: taskInput }]);
-    console.log(tasks);
+
+    if (task.length > 0) {
+      setTasks([...tasks, { id: tasks.length + 1, text: task }]);
+      setTask("Yo");
+    }
   };
 
   const getInput = (e) => {
-    taskInput = e.target.value;
+    setTask(e.target.value);
+    btnClicked = true;
   };
 
   const deleteTask = (id) => {
@@ -38,7 +43,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <From getInput={getInput} taskSubmit={taskSubmit} />
+      <From
+        getInput={getInput}
+        taskSubmit={taskSubmit}
+        inputText={task}
+        btnClicked={btnClicked}
+      />
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} />
       ) : (

@@ -1,6 +1,7 @@
 import Button from "./Button";
 
-const Form = ({ getInput, taskSubmit }) => {
+const Form = ({ getInput, taskSubmit, task, btnClicked }) => {
+  console.log(task);
   return (
     <form action="">
       <input
@@ -9,6 +10,7 @@ const Form = ({ getInput, taskSubmit }) => {
         id="task-input"
         placeholder="Enter your task here"
         onChange={getInput}
+        value={btnClicked ? "" : task}
       />
       <Button text="Add" onClick={taskSubmit} />
     </form>
