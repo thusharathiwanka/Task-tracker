@@ -27,7 +27,7 @@ function App() {
 
     if (task.length > 0) {
       setTasks([...tasks, { id: tasks.length + 1, text: task }]);
-      setTask("Yo");
+      setTask("");
     }
   };
 
