@@ -20,20 +20,24 @@ function App() {
   ]);
 
   const [task, setTask] = useState("");
-  let btnClicked = false;
+  const [input, setInput] = useState("");
 
   const taskSubmit = (e) => {
     e.preventDefault();
 
     if (task.length > 0) {
       setTasks([...tasks, { id: tasks.length + 1, text: task }]);
-      setTask("");
+      clearInput();
     }
   };
 
+  const clearInput = () => {
+    setInput("");
+  };
+
   const getInput = (e) => {
+    setInput(e.target.value);
     setTask(e.target.value);
-    btnClicked = true;
   };
 
   const deleteTask = (id) => {
@@ -47,7 +51,7 @@ function App() {
         getInput={getInput}
         taskSubmit={taskSubmit}
         inputText={task}
-        btnClicked={btnClicked}
+        userInput={input}
       />
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} />
